@@ -1,0 +1,20 @@
+<table class="table table-striped" border="1" cellspacing="0" cellpadding="10" width="100%">
+    <thead>
+        <th>No.</th>
+        <th>Tanggal Aduan</th>
+        <th>Nama Pengadu</th>
+        <th>Judul Aduan</th>
+        <th>Isi Aduan</th>
+    </thead>
+    <tbody>
+    @foreach($pengaduan as $aduan)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $aduan->tanggal_aduan }}</td>
+            <td>{{ $aduan->users->name }}</td>
+            <td>{{ $aduan->judul_aduan }}</td>
+            <td>{{ $aduan->isi_aduan }}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
